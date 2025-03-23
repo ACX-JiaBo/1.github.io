@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写给中国网络安全贡献者的信</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        #code-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 3s ease;
+        }
+
+        #middle-section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: none;
+            z-index: 2;
+            perspective: 1000px;
+            color: #0f0;
+        }
+
+       .phase {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5em;
+            opacity: 0;
+            width: 80%;
+            text-align: center;
+        }
+
+       .phase-1 {
+            animation: fadeInOut 3s ease-in-out forwards;
+        }
+
+       .phase-2 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 3s;
+        }
+
+       .phase-3 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 6s;
+        }
+
+       .phase-4 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 9s;
+        }
+
+       .phase-5 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 12s;
+        }
+
+       .intrusion {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            text-align: center;
+            opacity: 0;
+        }
+
+       .intrusion-1 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 15s;
+        }
+
+       .intrusion-2 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 18s;
+        }
+
+       .intrusion-3 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 21s;
+        }
+
+       .intrusion-4 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 24s;
+        }
+
+       .red-garbage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0);
+            color: red;
+            font-family: monospace;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity 3s ease, background-color 3s ease;
+            animation: showGarbage 3s ease-in-out forwards;
+            animation-delay: 27s;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        @keyframes showGarbage {
+            0% {
+                opacity: 0;
+                background-color: rgba(255, 0, 0, 0);
+            }
+            50% {
+                opacity: 1;
+                background-color: rgba(255, 0, 0, 0.3);
+            }
+            100% {
+                opacity: 0;
+                background-color: rgba(255, 0, 0, 0);
+            }
+        }
+
+       .console {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: #000;
+            border: 2px solid #0f0;
+            color: #0f0;
+            font-family: monospace;
+            font-size: 1.2em;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 30s;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+       .phase-6 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 33s;
+        }
+
+       .phase-7 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 36s;
+        }
+
+       .phase-8 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 39s;
+        }
+
+       .phase-9 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 42s;
+        }
+
+       .phase-10 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 45s;
+        }
+
+       .phase-11 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 48s;
+        }
+
+       .phase-12 {
+            animation: fadeInOut 3s ease-in-out forwards;
+            animation-delay: 51s;
+        }
+
+        #letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 800px;
+            height: 80%;
+            max-height: 600px;
+            background: rgba(0, 116, 217, 0.8);
+            color: #fff;
+            padding: 40px;
+            display: none;
+            z-index: 3;
+            overflow-y: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 116, 217, 0.5);
+        }
+
+        #letter h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        #letter p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            #letter {
+                width: 90%;
+                padding: 20px;
+            }
+            #letter h1 {
+                font-size: 2em;
+            }
+            #letter p {
+                font-size: 1em;
+            }
+           .phase {
+                font-size: 2em;
+            }
+           .intrusion {
+                font-size: 1.5em;
+            }
+           .red-garbage {
+                font-size: 1em;
+            }
+           .console {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="code-rain"></div>
+    <div id="middle-section">
+        <div class="phase phase-1">嘿，现在这网络时代可太火啦！各种信息在网上疯狂流动，给咱们生活带来了好多便利。</div>
+        <div class="phase phase-2">咱上网购物、社交聊天、办公学习，样样都离不开网络。但便利背后，也藏着不少风险呢。</div>
+        <div class="phase phase-3">有些不法分子就盯上了网络这块“肥肉”，整天琢磨着怎么搞破坏，偷偷摸摸地找系统漏洞。</div>
+        <div class="phase phase-4">他们就像潜伏在黑暗里的小偷，等着机会一到，就对咱们的网络下手。</div>
+        <div class="phase phase-5">平常看着网络挺平静的，可谁知道啥时候就会冒出个大危机。</div>
+        <div class="intrusion intrusion-1">看，他们开始行动了！用各种扫描工具，像雷达一样在网络里搜索漏洞。</div>
+        <div class="intrusion intrusion-2">还真让他们找到了一个小漏洞，就像找到了一扇没锁好的门，开始尝试闯进去。</div>
+        <div class="intrusion intrusion-3">一旦突破了防线，他们就赶紧植入恶意程序，就像在电脑里埋下了一颗定时炸弹。</div>
+        <div class="intrusion intrusion-4">这下糟了，数据开始乱套，系统也变得乱七八糟，好多功能都用不了啦！</div>
+        <div class="red-garbage">
+            <pre>
+ERROR: segmentation fault at address 0x7fffffffffff
+SIGSEGV: segmentation violation signal received
+Kernel panic - not syncing: Attempted to kill init!
+/dev/sda1: unexpected inconsistency; run fsck manually.
+(Repair filesystem)
+fsck.ext4: No such file or directory while trying to open /dev/sda1
+Possibly non-existent device?
+Bus error: 10
+Aborted (core dumped)
+Illegal instruction: 4
+            </pre>
+            <pre>
+#$%@#!%@#$%^&*()_+|~`1234567890-=[]\{};':",./<>?
+#$%@#!%@#$%^&*()_+|~`1234567890-=[]\{};':",./<>?
+#$%@#!%@#$%^&*()_+|~`1234567890-=[]\{};':",./<>?
+#$%@#!%@#$%^&*()_+|~`1234567890-=[]\{};':",./<>?
+#$%@#!%@#$%^&*()_+|~`1234567890-=[]\{};':",./<>?
+            </pre>
+            <pre>
+*** stack smashing detected ***: terminated
+Fatal error: glibc detected an invalid stdio handle
+Out of memory: Killed process 1234 (example_process) total-vm:1234567kB, anon-rss:123456kB, file-rss:0kB, shmem-rss:0kB
+OOM killer activated!
+            </pre>
+        </div>
+        <div class="console">
+            <p>root@target-server:~# nmap -sV 127.0.0.1
+                <span class="output">Starting Nmap 7.80 ( https://nmap.org ) at 2025-03-23 12:00 UTC
+                    Nmap scan report for localhost (127.0.0.1)
+                    Host is up (0.0000050s latency).
+                    Not shown: 999 closed ports
+                    PORT     STATE SERVICE    VERSION
+                    22/tcp   open  ssh        OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+                    80/tcp   open  http       Apache httpd 2.4.41 ((Ubuntu))
+                    443/tcp  open  ssl/http   Apache httpd 2.4.41 ((Ubuntu))
+                    Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</span>
+            </p>
+            <p>root@target-server:~# hydra -l admin -P /usr/share/wordlists/rockyou.txt 127.0.0.1 http-post-form "/login.php:username=^USER^&password=^PASS^:F=incorrect"
+                <span class="output">Hydra v9.1 (c) 2020 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+                    Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2025-03-23 12:05 UTC
+                    [DATA] max 16 tasks per 1 server, overall 16 tasks, 14344399 login tries (l:1/p:14344399), ~896525 tries per task
+                    [DATA] attacking http-post-form://127.0.0.1:80/login.php:username=^USER^&password=^PASS^:F=incorrect
+                    [80][http-post-form] host: 127.0.0.1   login: admin   password: password123
+                    1 of 1 target successfully completed, 1 valid password found
+                    Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2025-03-23 12:10 UTC</span>
+            </p>
+            <p>root@target-server:~# ssh admin@127.0.0.1
+                <span class="output">admin@127.0.0.1's password: 
+                    Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-89-generic x86_64)
+                    Last login: Mon Mar 22 18:25:34 2025 from 192.168.1.100
+                    admin@target-server:~$</span>
+            </p>
+            <p>admin@target-server:~$ sudo -s
+                <span class="output">[sudo] password for admin: 
+                    root@target-server:~#</span>
+            </p>
+            <p>root@target-server:~# cat /etc/shadow
+                <span class="output">root:$6$rounds=656000$abcdefghijklmnop$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789/./:18460:0:99999:7:::
+                    daemon:*:18273:0:99999:7:::
+                    bin:*:18273:0:99999:7:::
+                    ...</span>
+            </p>
+            <p>root@target-server:~# rm -rf /var/www/html/*
+                <span class="output">Files deleted successfully...</span>
+            </p>
+            <p>root@target-server:~# dd if=/dev/zero of=/dev/sda bs=1M count=1000
+                <span class="output">1000+0 records in
+                    1000+0 records out
+                    1048576000 bytes (1.0 GB, 1000 MiB) copied, 10.000000 s, 104.9 MB/s</span>
+            </p>
+            <p>root@target-server:~# shutdown -h now
+                <span class="output">Shutdown scheduled for Sun 2025-03-23 12:20:00 UTC, use 'shutdown -c' to cancel.</span>
+            </p>
+        </div>
+        <div class="phase phase-6">企业可倒大霉了，业务一下子就停摆了。员工们没法正常工作，有的项目也只能暂停，收入跟着减少。</div>
+        <div class="phase phase-7">咱们普通人也不好受啊，个人信息泄露出去，天天收到各种骚扰电话和垃圾短信，生活全被打乱了。</div>
+        <div class="phase phase-8">更严重的是，国家的一些关键信息系统要是被攻击，那可能会影响到国家安全，后果不堪设想。</div>
+        <div class="phase phase-9">不过别怕，总有那么一群厉害的网络安全高手，他们就像超级英雄一样，站出来守护咱们的网络世界。</div>
+        <div class="phase phase-10">他们每天盯着电脑屏幕，分析各种数据，及时发现那些隐藏的危险，把威胁消灭在萌芽状态。</div>
+        <div class="phase phase-11">为了修复漏洞，他们可能会熬夜加班，不放过任何一个小细节，就为了让咱们的网络更安全。</div>
+        <div class="phase phase-12">他们不断学习新的知识和技术，和那些不法分子斗智斗勇，就像在打一场永不停歇的战争。</div>
+    </div>
+    <div id="letter">
+        <h1>致每一位中国网络安全贡献者</h1>
+        <p>尊敬的网络安全贡献者们：</p>
+        <p>在当今数字化的时代，网络已经成为了我们生活中不可或缺的一部分。我们享受着网络带来的便捷与高效，却往往忽略了背后默默守护着我们网络安全的你们。</p>
+        <p>你们是数字世界的守护者，是信息安全的捍卫者。在看不见的网络战场上，你们用智慧和勇气，与各种网络威胁展开了一场又一场没有硝烟的战争。面对黑客的攻击、病毒的肆虐、数据的泄露，你们毫不退缩，始终坚守在自己的岗位上，用专业的技术和无私的奉献，为我们构筑起了一道坚不可摧的网络安全防线。</p>
+        <p>你们的工作或许并不为人所知，但你们的贡献却至关重要。是你们的努力，让我们能够在网络世界中安心地学习、工作和生活；是你们的付出，让我们的国家在数字化浪潮中能够稳步前行，不受外界的干扰和威胁。</p>
+        <p>作为一名高二的学生，我虽然还不能像你们一样直接投身到网络安全的工作中，但我深知网络安全对于国家和社会的重要性。我会努力学习科学文化知识，培养自己的创新能力和实践能力，将来有机会也能加入到你们的行列中，为我国的网络安全事业贡献自己的一份力量。</p>
+        <p>最后，我想再次向每一位中国网络安全贡献者表示最崇高的敬意和最衷心的感谢。感谢你们的辛勤付出和无私奉献，愿你们在未来的工作中取得更加辉煌的成就！</p>
+        <p>此致</p>
+        <p>敬礼！</p>
+        <p>一名高二学生 - 江嘉博</p>
+        <p>2025年3月23日</p>
+    </div>
+    <script>
+        const codeRain = document.getElementById('code-rain');
+        const middleSection = document.getElementById('middle-section');
+        const letter = document.getElementById('letter');
+        const canvas = document.createElement('canvas');
+        codeRain.appendChild(canvas);
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const ctx = canvas.getContext('2d');
+        const binary = '01';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        const techBlue = '#0074D9';
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = techBlue;
+            ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = binary.charAt(Math.floor(Math.random() * binary.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        const codeRainDuration = 10000; // 10秒
+        const middleSectionDuration = 54000; // 54秒
+        const totalDuration = codeRainDuration + middleSectionDuration;
+
+        const codeRainInterval = setInterval(draw, 33);
+        setTimeout(() => {
+            clearInterval(codeRainInterval);
+            codeRain.style.opacity = 0;
+            setTimeout(() => {
+                codeRain.style.display = 'none';
+                middleSection.style.display = 'block';
+            }, 3000); 
+        }, codeRainDuration);
+
+        setTimeout(() => {
+            middleSection.style.display = 'none';
+            letter.style.display = 'block';
+        }, totalDuration);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+
+</html>    
